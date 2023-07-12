@@ -1,7 +1,4 @@
-var t = setInterval(function() {
-  console.log('test2')
-}, 1000)
-console.log('test1')
+
 
 const express = require('express')
 const app = express()
