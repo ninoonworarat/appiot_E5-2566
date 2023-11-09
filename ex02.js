@@ -8,11 +8,11 @@ const multer = require('multer')
 const db = knex({
   client: 'mysql',
   connection: {
-    host: process.env.MYSQL_HOST || 'localhost',
+    host: process.env.MYSQL_HOST || '127.0.0.1',
     port: process.env.MYSQL_PORT || 3306,
     user: process.env.MYSQL_USER || 'root',
-    password: process.env.MYSQL_PASS || '123456',
-    database: process.env.MYSQL_DB || 'iot66',
+    password: process.env.MYSQL_PASS || '',
+    database: process.env.MYSQL_DB || 'it worarat',
     supportBigNumber: true,
     timezone: '+7:00',
     dateStrings: true,
@@ -22,7 +22,8 @@ const db = knex({
 
 app.use(cors())
 app.use(bodyParser.json())
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
+  console.log('test api')
   res.send({ ok: 1 })
 })
 app.get('/lists', async (req, res) => {
